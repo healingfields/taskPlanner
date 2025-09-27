@@ -2,15 +2,9 @@ package ma.showmaker.domain.monitor;
 
 import java.util.Map;
 
-public class Monitor {
+public interface Monitor {
 
-    void start(){
-
-    }
-    void stop(){
-
-    }
-    Map<String, String> getMetrics(){
-        return null;
-    }
+    void start();
+    void stop();
+    Map<String, String> getMetrics();
 }
