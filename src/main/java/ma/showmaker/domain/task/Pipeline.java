@@ -4,6 +4,7 @@ import ma.showmaker.domain.result.Result;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Pipeline <T>{
     private final List<Task<T, T>> tasks;
@@ -18,7 +19,10 @@ public class Pipeline <T>{
         this.tasks.add(task);
     }
 
-     public Result<T> run(T first_task_input){
+     public Result<T> run(T first_task_input) throws RuntimeException {
+        if(Objects.isNull(first_task_input)){
+            throw new RuntimeException("input is null");
+        }
         T result = first_task_input;
         for(Task<T, T> task: tasks){
             result = task.execute(result);

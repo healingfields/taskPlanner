@@ -9,12 +9,16 @@ public class DuplicateStringTask implements Task<String, String> {
     }
     @Override
     public String execute(String input) {
-        if(this.number_of_times == 0) return input;
-        StringBuilder string_builder = new StringBuilder();
-        for(int i = 0; i < this.number_of_times;i++){
-            string_builder.append(" ");
-            string_builder.append(input);
+        if (this.number_of_times <= 0) return input;
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < this.number_of_times; i++) {
+            if (i > 0) {
+                stringBuilder.append(" "); // add space **between** duplicates
+            }
+            stringBuilder.append(input);
         }
-        return string_builder.toString();
+
+        return stringBuilder.toString();
     }
 }
