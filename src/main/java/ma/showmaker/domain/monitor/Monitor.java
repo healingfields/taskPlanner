@@ -1,4 +1,4 @@
-package ma.showmaker.monitor;
+package ma.showmaker.domain.monitor;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package ma.showmaker.result;
+package ma.showmaker.domain.result;
 
 import java.util.Map;
 
