@@ -7,15 +7,15 @@ import ma.showmaker.domain.task.Pipeline;
 import ma.showmaker.infrastructure.logging.Logger;
 
 public class PipelineExecutor<T> {
-    List<Monitor> monitors;
+    List<Monitor<T, T>> monitors;
     Logger<String> logger;
 
-    PipelineExecutor(List<Monitor> monitors, Logger<String> logger){
+    public PipelineExecutor(List<Monitor<T, T>> monitors, Logger<String> logger){
         this.monitors = monitors;
         this.logger = logger;
     }
 
-    Result<T> execute(Pipeline<T> pipeline, T pipeline_input){
+    public Result<T> execute(Pipeline<T> pipeline, T pipeline_input){
         logger.log("started executing the pipeline");
         this.monitors.forEach(Monitor::start);
 

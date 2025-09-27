@@ -8,13 +8,13 @@ import java.util.List;
 public class Pipeline <T>{
     private final List<Task<T, T>> tasks;
 
-    Pipeline(){
+    public Pipeline(){
         this.tasks = new ArrayList<>();
     }
-    Pipeline(List<Task<T, T>> tasks){
+    public Pipeline(List<Task<T, T>> tasks){
         this.tasks = tasks;
     }
-    void addTask(Task<T, T> task){
+    public void addTask(Task<T, T> task){
         this.tasks.add(task);
     }
 

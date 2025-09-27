@@ -4,7 +4,7 @@ import ma.showmaker.domain.monitor.Monitor;
 
 import java.util.Map;
 
-public class MemoryMonitor implements Monitor<String, Long> {
+public class MemoryMonitor implements Monitor<String, String> {
     long used_memory_before;
     long used_memory_after;
     @Override
@@ -18,7 +18,7 @@ public class MemoryMonitor implements Monitor<String, Long> {
     }
 
     @Override
-    public Map<String, Long> getMetrics() {
-        return Map.of("used memory to execute the task (Bytes)", used_memory_after - used_memory_before);
+    public Map<String, String> getMetrics() {
+        return Map.of("used memory to execute the task (Bytes)", String.valueOf(used_memory_after - used_memory_before));
     }
 }

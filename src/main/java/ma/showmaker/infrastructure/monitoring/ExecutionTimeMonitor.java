@@ -4,7 +4,7 @@ import ma.showmaker.domain.monitor.Monitor;
 
 import java.util.Map;
 
-public class ExecutionTimeMonitor implements Monitor<String, Long> {
+public class ExecutionTimeMonitor implements Monitor<String, String> {
     private long start_time;
     private long end_time;
     @Override
@@ -18,7 +18,7 @@ public class ExecutionTimeMonitor implements Monitor<String, Long> {
     }
 
     @Override
-    public Map<String, Long> getMetrics() {
-        return Map.of("time of execution", (end_time- start_time) / 1_000_000);
+    public Map<String, String> getMetrics() {
+        return Map.of("time of execution", String.valueOf((end_time- start_time) / 1_000_000));
     }
 }

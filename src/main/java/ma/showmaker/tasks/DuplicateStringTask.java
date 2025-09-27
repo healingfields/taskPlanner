@@ -4,7 +4,7 @@ import ma.showmaker.domain.task.Task;
 
 public class DuplicateStringTask implements Task<String, String> {
     int number_of_times;
-    DuplicateStringTask(int number_of_times){
+    public DuplicateStringTask(int number_of_times){
         this.number_of_times  = number_of_times;
     }
     @Override
