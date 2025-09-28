@@ -1,6 +1,7 @@
+package ma.showmaker;
+
 import ma.showmaker.domain.result.Result;
 import ma.showmaker.domain.task.Pipeline;
-import ma.showmaker.domain.task.Task;
 import ma.showmaker.tasks.DuplicateStringTask;
 import ma.showmaker.tasks.LowerCaseTask;
 import org.junit.jupiter.api.Test;
@@ -8,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PipelineTest {
-
 
     @Test
     void test_pipeline_without_task(){
@@ -23,7 +23,7 @@ public class PipelineTest {
         LowerCaseTask lowerCaseTask = new LowerCaseTask();
         pipeline.addTask(lowerCaseTask);
         Result<String> result = pipeline.run("HELLO");
-        assertEquals("HELLO", result.value);
+        assertEquals("hello", result.value);
     }
 
     @Test

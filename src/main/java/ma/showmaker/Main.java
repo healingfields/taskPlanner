@@ -18,7 +18,6 @@ public class Main {
         pipeline.addTask(new DuplicateStringTask(10));
         pipeline.addTask(new ReplaceSpacesTask());
         pipeline.addTask(new UpperCaseTask());
-        pipeline.addTask(new ReplaceSpacesTask());
 
         ExecutionTimeMonitor executionTimeMonitor = new ExecutionTimeMonitor();
         MemoryMonitor memoryMonitor = new MemoryMonitor();

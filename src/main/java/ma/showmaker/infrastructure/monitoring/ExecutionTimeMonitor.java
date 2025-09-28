@@ -19,6 +19,6 @@ public class ExecutionTimeMonitor implements Monitor<String, String> {
 
     @Override
     public Map<String, String> getMetrics() {
-        return Map.of("time of execution", String.valueOf((end_time- start_time) / 1_000_000));
+        return Map.of("time of execution", String.valueOf((end_time - start_time) / 1_000_000));
     }
 }
